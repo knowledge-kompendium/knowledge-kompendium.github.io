@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge Kompendium</title>
+<meta name="description" content="Open specifications, reference implementations, and curated content for computable, versioned knowledge.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Knowledge Kompendium">
+<meta property="og:description" content="Computable, versioned knowledge. Open specifications and reference implementations.">
+<meta property="og:image" content="https://kompendium.ike.network/assets/kompendium-social.png">
+<meta property="og:url" content="https://kompendium.ike.network/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --midnight:#221332; --ink:#1d1230; --orchid:#7b3fa0; --drift:#cfade5; --mauve:#d7abd0; --blush:#f7c7b8; --lavender:#f0e8f4;
+  --bg:#ffffff; --fg:var(--ink); --muted:#5b4a6e; --link:var(--orchid); --panel:var(--lavender); --rule:#e2d6ea;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#1d1230; --fg:#e5edef; --muted:#b9a8c9; --link:var(--mauve); --panel:#2c1d45; --rule:#3a2a55; }
+}
+:root[data-theme="dark"]{ --bg:#1d1230; --fg:#e5edef; --muted:#b9a8c9; --link:var(--mauve); --panel:#2c1d45; --rule:#3a2a55; }
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:300;font-size:18px;line-height:1.65}
+a{color:var(--link);text-underline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header.hero{background:var(--midnight);color:#e5edef}
+.hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;padding-top:96px;padding-bottom:96px}
+.hero img{width:168px;height:168px;border-radius:28px;display:block}
+.hero h1{font-weight:500;font-size:clamp(36px,5.5vw,60px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 20px}
+.hero .rule{width:120px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--drift),var(--blush));margin:0 0 24px}
+.hero p{margin:0;font-size:clamp(18px,2.2vw,22px);color:var(--mauve);max-width:36ch}
+.hero nav{margin-top:32px;display:flex;gap:20px;flex-wrap:wrap;font-size:16px;font-weight:400}
+.hero nav a{color:#e5edef}
+section{padding:72px 0;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+h2{font-weight:500;font-size:28px;letter-spacing:-0.01em;margin:0 0 20px}
+h3{font-weight:500;font-size:19px;margin:0 0 8px}
+.lede{font-size:22px;max-width:40ch;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--panel);border-radius:16px;padding:24px 26px}
+.card p{margin:0;color:var(--muted);font-size:17px}
+.component{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--panel);border-radius:16px;padding:26px}
+.badge{justify-self:start;font-size:13px;font-weight:500;letter-spacing:.02em;background:var(--midnight);color:var(--blush);border-radius:999px;padding:4px 12px;white-space:nowrap}
+.component p{margin:0;color:var(--muted)}
+footer{padding:40px 0 56px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:720px){
+  .hero .wrap{grid-template-columns:1fr;gap:28px;padding-top:56px;padding-bottom:56px}
+  .hero img{width:96px;height:96px;border-radius:18px}
+  .grid{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .component{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <img src="assets/kompendium-mark.svg" alt="">
+    <div>
+      <h1>Knowledge Kompendium</h1>
+      <div class="rule"></div>
+      <p>Computable, versioned knowledge. Open specifications and reference implementations.</p>
+      <nav>
+        <a href="https://github.com/knowledge-kompendium">GitHub</a>
+        <a href="#components">Components</a>
+        <a href="#principles">Principles</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <p class="lede">A kompendium compounds rather than merely accumulates.</p>
+      <p>Each contribution is identified, versioned, and attributable, so later work builds on earlier work without guessing what it meant or when it changed. Specifications, reference code, and worked examples live side by side and are released together.</p>
+    </div>
+  </section>
+
+  <section id="components">
+    <div class="wrap">
+      <h2>Components</h2>
+      <div class="component">
+        <span class="badge">Active</span>
+        <div>
+          <h3>ANF: Analysis Normal Form</h3>
+          <p>A statement-level representation for clinical and terminological assertions, with description-logic semantics for the parts that need them.</p>
+        </div>
+      </div>
+      <p style="color:var(--muted);margin-top:20px">Further components will be added as they mature.</p>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="wrap">
+      <h2>Principles</h2>
+      <div class="grid">
+        <div class="card"><h3>Identity is stable</h3><p>Every component is addressable by a persistent identifier, independent of its label or location.</p></div>
+        <div class="card"><h3>Every change is versioned</h3><p>Status, Time, Author, Module, and Path (STAMP) accompany each assertion.</p></div>
+        <div class="card"><h3>Semantics where they earn their keep</h3><p>Description-logic definitions, EL++ and beyond, are first-class. Not every vertex has to carry them.</p></div>
+        <div class="card"><h3>Specs and code evolve together</h3><p>Specification text, reference implementations, and examples ship as one release.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Participate</h2>
+      <p>Work happens in the open at <a href="https://github.com/knowledge-kompendium">github.com/knowledge-kompendium</a>. Start with the <a href="https://github.com/knowledge-kompendium/.github/blob/main/CONTRIBUTING.md">contributing guide</a>. All repositories, code and specification text alike, are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Knowledge Kompendium</span>
+    <span>Apache-2.0 · kompendium.ike.network</span>
+  </div>
+</footer>
+</body>
+</html>
